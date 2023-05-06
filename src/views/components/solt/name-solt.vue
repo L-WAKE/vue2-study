@@ -1,15 +1,15 @@
 <template>
   <div class="wrapper">
-    <!-- header 具名插槽 -->
-    <header class="header">
-      <slot name="header"></slot>
-    </header>
-
     <!-- 默认插槽 -->
     <div class="default">
       <slot></slot>
     </div>
 
+    <!-- header 具名插槽 -->
+    <header class="header">
+      <slot name="header"></slot>
+    </header>
+    
     <!-- footer 具名 + 作用域插槽 -->
     <footer class="footer">
       <slot name="footer" :footerInfo="footerInfo"></slot>

@@ -18,7 +18,8 @@
     -->
 
     <my-solt>
-      <template v-slot:header>
+      <!-- v-solt:  可以简写成# -->
+      <template v-solt:header>
         <h1>header 具名插槽</h1>
       </template>
 
@@ -26,7 +27,7 @@
         <h1>默认插槽</h1>
       </template>
 
-      <template v-slot:footer="slotProps">
+      <template #footer="slotProps">
         <h1>footer 具名 + 作用域插槽</h1>
         <p>{{ slotProps.footerInfo.text }}</p>
       </template>
