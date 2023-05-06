@@ -1,0 +1,13 @@
+.header {
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test-loader {
+    width: 500px;
+    height: 400px;
+    background: url("../image/2.jpg") no-repeat;
+    background-size: 100% 100%;
+}

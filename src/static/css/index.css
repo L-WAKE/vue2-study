@@ -1,0 +1,8 @@
+body {
+    background: #dadada;
+    display: inline;
+}
+
+.add-class {
+    background-color: #dadada !important;
+}
