@@ -8,7 +8,8 @@ const TerserPlugin = require("terser-webpack-plugin"); //删除debugger等
 module.exports = merge(webpackCommonConf, {
   mode: "production", // 生产环境
   output: {
-    filename: "js/[name].[contenthash:8].js", // 打包代码时，webpac4 用contentHash,webpack5用contenthash;
+    // filename: "js/[name].[contenthash:8].js",
+    filename: "js/[name].[contenthash].bundle.js",
     path: distPath,
     // publicPath: 'http://cdn.abc.com'  // 修改所有静态文件 url 的前缀（如 cdn 域名）
   },

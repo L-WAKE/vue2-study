@@ -9,7 +9,9 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+    console.log("测试111");
+  },
 };
 </script>
 <style scoped lang="scss">

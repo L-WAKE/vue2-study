@@ -1,8 +1,16 @@
 const commonWebpackConfig = require("./webpack.common");
 const { merge } = require("webpack-merge");
+const { distPath } = require("./paths");
+const TerserPlugin = require("terser-webpack-plugin"); //删除debugger等
 
 module.exports = merge(commonWebpackConfig, {
   mode: "development", // process.env.NODE_ENV = development
+  output: {
+    // filename: "js/[name].[contenthash:8].js", // 打包代码时，webpac4 用contentHash,webpack5用contenthash;
+    filename: 'js/[name].[contenthash].bundle.js',
+    path: distPath,
+    // publicPath: 'http://cdn.abc.com'  // 修改所有静态文件 url 的前缀（如 cdn 域名）
+  },
   // 开启持久化缓存-提升第二次启动速度
   cache: true,
   plugins: [],
@@ -31,5 +39,12 @@ module.exports = merge(commonWebpackConfig, {
   },
   optimization: {
     // 开发环境...
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true, //多核打包，提升打包速度
+        extractComments: false, //是否将注释全部集中到一个文件中
+      }),
+    ],
   },
 });
