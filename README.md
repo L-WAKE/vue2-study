@@ -12,7 +12,7 @@ npm run dev
 
 ### Compiles and build for production
 ```
-npm run build
+npm run build:prod
 ```
 
 ### Customize configuration
